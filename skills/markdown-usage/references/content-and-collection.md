@@ -29,10 +29,10 @@ Preserve original filenames unless renaming is part of the task. For spaces in a
 | Experiments, if present | `## Experiments` with setup, resources, results, and interpretation | Subsections or compact comparison tables for substantial experiments |
 | Conclusions, if applicable | `## Conclusions` grounded in the analysis | A clearly identifiable concluding paragraph in `## Experiments and Conclusions` |
 | Limitations and independent improvements | `## Limitations and Improvements` connecting each limitation to evidence and a proposal | Separate subsections for substantially different limitations |
-| Relevant references, if present | `## References` with linked bibliographic entries | Supported footnotes for short asides, with the references still discoverable |
+| Strongly relied-on related works, if any | `## References` with linked bibliographic entries | Supported footnotes for short asides, with the references still discoverable |
 | Original or appendix examples | A short contextualized passage, quotation, or necessary code excerpt | A small table when comparing several genuinely parallel examples |
 | Figures and other media | Local asset embed with adjacent source locator and interpretation | Linked full-resolution asset or media file when embedding is unsuitable |
-| Global index | Descriptive note links with brief summaries | A compact table if the user wants consistent comparison fields |
+| Global index | Nested research-field → subcategory → linked-note lists | Category headings with linked lists, preserving the same hierarchy |
 | Scientific review | Apply the main skill's review before completion | Keep working checklists outside the finished narrative unless requested |
 
 These are choices of form, not permission to omit required content. Do not create empty sections for inapplicable material. Do not invent publication metadata or experiments to fill a template.
@@ -77,7 +77,7 @@ publication status or venue, approximate date, and significance.]
 
 ## References
 
-- [Related work](../related-note-title/note.md). [Verified citation details.]
+- [Related work essential to this note](../related-note-title/note.md). [Verified citation details.]
 ```
 
 For a brief work, use fewer subsections and retain the required material in connected paragraphs. For an experiment-heavy paper, organize separate experiments by research question when that makes the setup and corresponding results easier to associate. Do not detach all findings from their conditions into a single undifferentiated results list.
@@ -90,7 +90,9 @@ Within the limitations section, connect the observed limitation, its consequence
 
 ## References and Source Locations
 
-Search the root `index.md` before adding a reference. Verify that an existing note describes the same work and relevant version, then prefer its relative link. If there is no matching note, include only supported bibliographic information and an available external link. Missing network access does not authorize completing uncertain citation details.
+Select references by the note's own dependencies. Include a related work only when the note's explanation, evidence, comparison, or analysis substantially relies on it, such as a foundational method it explains or a baseline it analyzes in depth. A passing mention or inclusion in the original bibliography is insufficient. Do not copy or enumerate the original work's related literature. Omit `## References` when no related work qualifies.
+
+Search the root `index.md` before adding a qualifying reference. Verify that an existing note describes the same work and relevant version, then prefer its relative link. If there is no matching note, include only supported bibliographic information and an available external link. Missing network access does not authorize completing uncertain citation details.
 
 Use source locators near specific claims and figures when useful, for example `Section 3.2`, `Table 2`, or `Appendix B`, localized in body text if appropriate. Distinguish the printed page label from the PDF viewer's page position when they differ. A PDF link such as `source/paper.pdf#page=7` may help in compatible viewers; preserve the page locator in visible text because fragment handling varies.
 
@@ -98,12 +100,23 @@ Heading anchors depend on the renderer. Prefer linking to the related `note.md` 
 
 ## Global Index
 
-Preserve the existing index format where practical. A simple default is a list under an English heading:
+Keep `index.md` limited to its title, category labels or headings, and clickable note links. Prefer nested Markdown lists with research fields as the first level and specific method families, literature types, or research tracks as subcategories. Reuse suitable categories; keep the corresponding `content/` directories flat.
+
+The following is an illustrative structure, not a set of required categories or real notes:
 
 ```markdown
 # Paper Notes
 
-- [Descriptive title](content/descriptive-title/note.md): concise summary.
+- Natural Language Processing
+  - Retrieval-Augmented Generation
+    - [Retrieval-guided evidence selection](content/retrieval-guided-evidence-selection/note.md)
+  - Surveys
+    - [A Survey of Language Model Evaluation](content/language-model-evaluation-survey/note.md)
+- Computer Vision
+  - Robustness Benchmarks
+    - [Evaluating recognition under distribution shifts](content/recognition-distribution-shifts/note.md)
 ```
 
-When the user wants comparison by fields such as topic or publication date, use a compact table with a linked title column. Keep long explanations in the notes. Do not invent dates for alignment, duplicate an existing entry, or break links while changing display titles. Index heading language follows the main skill; summaries follow the requested body language.
+Each note entry must link to an existing `note.md` using its actual root-relative path. Link text may be the literature title or a concise, accurate summary-style label. Do not append summaries, annotations, or explanations outside the link. Exclude comparison tables, introductory prose, processing logs, and maintenance instructions from the index; keep analysis in the notes and operational records elsewhere.
+
+Preserve existing entries when organizing the tree, avoid duplicates, and verify destinations after changing categories or display labels. Markdown headings remain English; list labels follow the requested body language while retaining original titles and technical names when appropriate.

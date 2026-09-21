@@ -53,7 +53,10 @@ facts, and do not present proposed improvements as demonstrated outcomes. -->
 
 ## References
 
-<!-- Include relevant references when present. Check ../../index.md first and
+<!-- Include only related works essential to the note's explanation, evidence,
+comparison, or analysis. Do not copy the original bibliography or list incidental
+background references. Omit this section when no related work qualifies.
+Check ../../index.md first and
 prefer relative links to existing notes, such as ../actual-note-title/note.md.
 Otherwise include only verified bibliographic information and available links.
 Never invent details to fill this template. -->

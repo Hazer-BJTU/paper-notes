@@ -19,12 +19,14 @@ All guidance and syntax examples here are in English. In actual notes, keep Mark
 2. Consult [Content and Collection](references/content-and-collection.md) when creating a note, choosing sections, linking original files or related notes, or updating the index. It maps every structural requirement of the main skill to Markdown options.
 3. Consult [Syntax and Mathematics](references/syntax-and-mathematics.md) for paragraphs, headings, links, lists, quotations, tables, formulas, and optional extensions. Use only extensions supported by the target renderer; when unknown, retain a readable CommonMark baseline and disclose necessary dependencies.
 4. Consult [Layout and Media](references/layout-and-media.md) when choosing tables versus prose, adapting to rendering width, embedding figures or other media, or preparing portable output.
-5. Write a connected scientific synthesis, introducing structured elements with enough context and explaining their implications in adjacent prose. Keep required analysis visible and complete.
+5. For notes, write a connected scientific synthesis, introducing structured elements with enough context and explaining their implications in adjacent prose. Keep required analysis visible and complete.
 6. Perform the main skill's scientific review, then the formatting review below. If a rendering preview is available, inspect it at the intended width and a narrower width. If it is unavailable, report that rendering was not verified rather than claiming visual validation.
 
 ## Formatting Review
 
 - Confirm the required title, source context, motivation, and independent limitations analysis are present; include applicable methods, experiments, conclusions, and references.
+- Keep References limited to related works the note strongly depends on; omit copied bibliographies and incidental background citations.
+- Keep `index.md` a clean tree of research fields, subcategories, and clickable note links. Use titles or summary-style link labels without separate explanations or comparison tables.
 - Check English headings, requested body language, logical heading levels, paragraph continuity, and moderate use of lists, tables, examples, and media.
 - Resolve relative links from the file that contains them, including paths to `assets/`, `source/`, sibling notes, and index entries. Check filename case as well as existence.
 - Verify formula delimiters, symbols, units, table alignment, escaped characters, closed fences, and extension support. Preserve meaning when changing notation or layout.

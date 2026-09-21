@@ -70,6 +70,14 @@ Treat `skills/` and everything inside it as **read-only**. Do not create, edit, 
 4. Move the processed original literature files from `pending/` into that note directory's `source/` directory.
 5. Update the root-level `index.md` to include the corresponding note and link to its `note.md` using a relative path.
 
+## Global Index Format
+
+Keep the root `index.md` a clean index of clickable note links. Include only the index title, category labels or headings, and linked entries; omit explanatory prose, separate summaries, comparison tables, processing status, and maintenance instructions.
+
+Prefer a tree organized as **research field → subcategory → note link**. Subcategories may represent specific method families, literature types (such as surveys or benchmarks), or research tracks. Reuse suitable existing categories and add categories as needed for the actual notes. This hierarchy belongs in the index only; keep note directories flat under `content/`.
+
+Every note entry must contain a working relative Markdown link to its `content/<note-title>/note.md`. Link text may use the literature's title or a concise, faithful summary-style label that distinguishes the work; it need not copy the title verbatim. Keep that summary inside the link text rather than adding an explanation after the link. See [Content and Collection](skills/markdown-usage/references/content-and-collection.md#global-index) for a Markdown example.
+
 ## Note Content
 
 Use English for all Markdown headings. Write the body paragraphs in the language requested by the user. If the literature's original title is not in English, retain it in the body and use an English heading.
@@ -81,7 +89,7 @@ Every complete `note.md` must contain the following required elements, with cond
 - **Methods (when applicable):** Explain the approach. Benchmark construction and benchmark structure also belong in this section.
 - **Experiments and Conclusions (when applicable):** When the work includes experiments, analyze the experimental setup, experimental resources (including datasets), and results in detail. Draw conclusions from that analysis and distinguish the original work's conclusions from your own interpretation. Include a conclusions section when appropriate to the work.
 - **Limitations and Improvements (required):** Discuss the original work's shortcomings and possible improvements. Include independent thinking that goes beyond what the original work states; do not merely repeat its own limitations or future-work discussion. Clearly identify your own critiques and proposals.
-- **References (when applicable):** Include relevant references when present. Consult the collection's global `index.md` first; if a referenced work already has a note, preferentially link to that note using a relative path. Otherwise, provide the relevant bibliographic information and an external source link when available.
+- **References (when applicable):** List only related works on which the note strongly depends: works essential to its explanation of a method, evidence, comparison, or analysis. Do not reproduce the original work's bibliography or collect loosely related background citations. Omit this section when no related work meets that criterion. Consult the collection's global `index.md` first; if a referenced work already has a note, preferentially link to that note using a relative path. Otherwise, provide the relevant bibliographic information and an external source link when available.
 
 The English labels above may be used as section headings. Keep required content present even when related topics are grouped or conditional sections are omitted.
 
@@ -114,7 +122,7 @@ Interpret the authors' intent only when the text supports that interpretation. I
 After completing a note, review it against the available original material to eliminate factual errors caused by hallucination. Resolve unsupported or conflicting statements by correcting them, removing them, or explicitly preserving the uncertainty; do not present unverified details as established facts. Check the following common error points:
 
 - **Identity and publication context:** Verify the title, authors, affiliations, venue, publication status, approximate date, and document version. Do not confuse a preprint with an accepted publication or treat institutional reputation as proof of validity.
-- **References and quotations:** Verify citation details and any quoted wording against accessible sources. Do not fabricate missing identifiers or links, or attribute claims to an inaccessible reference based only on its title.
+- **References and quotations:** Confirm each listed related work is essential to the note's discussion, rather than included merely because the original cites it. Verify citation details and any quoted wording against accessible sources. Do not fabricate missing identifiers or links, or attribute claims to an inaccessible reference based only on its title.
 - **Research claims and author intent:** Check that the stated motivation, contributions, and conclusions reflect the source. Separate explicit statements from supported interpretation and from the note's own analysis.
 - **Methods and benchmark construction:** Verify procedural details, dataset origins, selection criteria, splits, and evaluation protocols. Do not fill in omitted implementation details with common practice.
 - **Experimental settings and resources:** Check model versions, baselines, datasets, sample sizes, hardware, and training or inference settings where reported. Do not substitute assumptions for unreported resources.
@@ -122,7 +130,7 @@ After completing a note, review it against the available original material to el
 - **Strength and scope of conclusions:** Preserve experimental conditions, uncertainty, and limitations. Do not turn correlation into causation, a narrow result into a universal claim, or an observed difference into statistical significance without supporting evidence.
 - **Limitations and improvements:** Confirm that criticisms account for relevant material in the main text and appendices. Label proposed improvements as proposals rather than demonstrated outcomes, and do not attribute the note's independent ideas to the authors.
 - **Media and source locations:** Check that images, captions, page numbers, and figure or table identifiers correspond to the cited source and version. Ensure crops retain the labels, legends, or qualifications needed to interpret the evidence correctly.
-- **Internal references:** Verify that links to existing notes identify the intended work and that relative paths to notes, assets, and original files resolve correctly. Reconcile the global index entry with the completed note.
+- **Internal references:** Verify that links to existing notes identify the intended work and that relative paths to notes, assets, and original files resolve correctly. Reconcile the global index entry with the completed note, check its research-field/subcategory placement, and remove non-index commentary.
 
 ## Interpretation Reminder
 

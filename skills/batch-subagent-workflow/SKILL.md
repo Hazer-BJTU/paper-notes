@@ -81,7 +81,7 @@ Use a state model with distinctions equivalent to these:
 
 Do not treat a submitted message, a present file, or a worker's confidence as proof of completion. If a worker is interrupted, inspect its actual artifacts before resuming or reassigning it. Prevent the previous owner from continuing to write before handing the path to a replacement.
 
-A worker's handoff should identify the source files actually read, output files created or changed, key source locators, checks performed, inaccessible resources, remaining uncertainties, and proposed index metadata. Supporting subtasks should return evidence with context, not unsupported conclusions. Keep operational review notes out of the finished scientific narrative unless they express a relevant evidence limitation.
+A worker's handoff should identify the source files actually read, output files created or changed, key source locators, checks performed, inaccessible resources, remaining uncertainties, and proposed index metadata (research field, subcategory, title or concise summary-style link label, and final note path). Supporting subtasks should return evidence with context, not unsupported conclusions. Keep operational review notes out of the finished scientific narrative unless they express a relevant evidence limitation.
 
 ## Review and Revision
 
@@ -89,7 +89,7 @@ Every note requires a source-based self-review and an acceptance review before i
 
 Check every note against the following criteria:
 
-1. **Identity and coverage:** Verify the work, version, title, source context, background, applicable methods and experiments, conclusions, independent limitations analysis, and relevant references. Confirm associated appendices were considered where needed.
+1. **Identity and coverage:** Verify the work, version, title, source context, background, applicable methods and experiments, conclusions, independent limitations analysis, and any strongly relied-on related references. Exclude entries included merely because they appear in the original bibliography. Confirm associated appendices were considered where needed.
 2. **Scientific fidelity:** Check factual claims against source evidence, especially numerical results, metric direction, dataset splits, baselines, resource requirements, publication status, and limitations. Check every reported number and quotation, not just a convenient example. Do not accept citation formatting as verification of a citation's contents.
 3. **Reasoning:** Confirm conclusions follow from the reported conditions and uncertainty. Distinguish author statements, interpretations, and proposed improvements. Look for critiques contradicted by the original's appendix or for invented evidence filling a missing detail.
 4. **Composition:** Check English headings, requested body language, connected prose, sufficient experimental detail, restrained formatting, and horizontal layout. A matching heading outline alone is insufficient.
@@ -104,7 +104,7 @@ After revision, verify the fixes and any dependent claims, tables, figures, and 
 
 Integrate accepted notes in a controlled sequence. The coordinator verifies the final destination, preserves unrelated existing content, and moves the assigned originals into the note's `source/` only when they are no longer needed at their pending paths by active tasks. Confirm destination existence and file integrity before treating archival as complete; never overwrite a different original with the same filename.
 
-Update the current global index without losing entries added since dispatch. Use accepted metadata, avoid duplicate entries, and prefer links to accepted related notes where available. Resolve cross-note references using actual final paths rather than planned names that may have changed.
+Update the current global index without losing entries added since dispatch. Place clickable note links under suitable research-field and subcategory branches using accepted metadata, and avoid duplicate entries. Use titles or concise summary-style labels inside the links. Keep explanations, separate summaries, and batch status out of `index.md`. In note References, prefer links to accepted related notes where available, retaining only works the note strongly depends on. Resolve cross-note references using actual final paths rather than planned names that may have changed.
 
 Then check the final `note.md`, assets, archived originals, index entry, and relative links together. Mark the task integrated only after these checks pass. Review and archival are distinct: an accepted draft with originals still in `pending/` is not fully processed.
 
